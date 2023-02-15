@@ -1,1 +1,1 @@
-submitions to tidytuesdays.
+submissions to tidytuesdays.
