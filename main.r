@@ -1,7 +1,5 @@
 # Marina A. 15/02/2023
 
-
-
 # Get the Data
 
 # Read in with tidytuesdayR package 

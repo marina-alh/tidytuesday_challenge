@@ -1,0 +1,61 @@
+'''
+title: "TidyTuesday 2020/18 - Broadway Musicals by Playbill"
+author: "Cedric Scherer"
+date: "28th of April 2020"
+output:
+  html_document:
+  theme: paper
+highlight: kate
+editor_options:
+  chunk_output_type: console
+'''
+
+{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, warning = F)
+
+
+r prep, message=FALSE, warning=FALSE}
+## packages
+library(tidyverse)
+library(ggforce)
+library(ggtext)
+library(extrafont)
+library(showtext)
+
+loadfonts()
+font_add_google("Staatliches", "Staatliches")
+
+## ggplot theme
+theme_set(theme_minimal(base_family = "Britannic Bold"))
+
+theme_update(axis.text = element_text(size = 14, color = "grey45"),
+             legend.title = element_text(size = 16, color = "grey65", face = "bold"),
+             legend.text = element_text(family = "Staatliches", size = 11, color = "grey45", face = "plain"),
+             panel.grid = element_blank(),
+             plot.background = element_rect(fill = "grey12", color = "grey12"),
+             plot.margin = margin(30, 80, 10, 50),
+             plot.title = element_markdown(size = 29, color = "grey97", 
+                                           face = "plain", lineheight = 1.15),
+             plot.title.position = "plot",
+             plot.subtitle = element_text(color = "grey45", size = 15, face = "plain",
+                                          margin = margin(t = 25, b = 15)),
+             plot.caption = element_text(color = "grey35", size = 12, face = "bold",
+                                          margin = margin(40, -300, 15, 0)),
+             plot.caption.position = "plot")
+
+
+{r data}
+df_grosses <- readr::read_csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2020/2020-04-28/grosses.csv', guess_max = 40000)
+
+pre_1985_starts <- readr::read_csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2020/2020-04-28/pre-1985-starts.csv')
+
+
+{r}
+### NOTHING TO SEE HEAR, SORRY... MAYBE YOU FIND OUT WHAT I MESSED UP BUT I'M NOT FOR SURE GOING TO PARADE MYSELF ANY FURTHER ;)
+
+
+
+***
+
+{r session-info}
+sessionInfo()
