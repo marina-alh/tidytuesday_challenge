@@ -16,16 +16,3 @@ library(tidyverse)
 
 tuesdata <- tidytuesdayR::tt_load(2023, week = 7)
 
-age_gaps <- tuesdata$age_gaps
-
-age_gaps <- as_tibble(age_gaps)
-
-homo <- age_gaps %>% filter(character_1_gender == character_2_gender) %>% select(age_difference)
-het <- age_gaps %>% filter(character_1_gender != character_2_gender) %>% select(age_difference)
-
-# plot histogram
-# plot summary
-
-glimpse(homo)
-summary(homo)
-summary(het)
